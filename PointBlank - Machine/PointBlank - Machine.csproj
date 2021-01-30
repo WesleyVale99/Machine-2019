@@ -1,0 +1,266 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1BF64CDF-2082-4B23-B5DB-33D1FD00B210}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>PointBlank___Machine</RootNamespace>
+    <AssemblyName>PointBlank - Machine</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x64</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>x-07-512.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup />
+  <PropertyGroup>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Cliente\AuthClient.cs" />
+    <Compile Include="Cliente\GameClient.cs" />
+    <Compile Include="Comandos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Comandos.Designer.cs">
+      <DependentUpon>Comandos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Conexão.cs" />
+    <Compile Include="Create_Box.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Create_Box.Designer.cs">
+      <DependentUpon>Create_Box.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Criar Clã.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Criar Clã.Designer.cs">
+      <DependentUpon>Criar Clã.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Enum\Channel_Type.cs" />
+    <Compile Include="Enum\Chat_Type.cs" />
+    <Compile Include="Enum\Enum_Amigos.cs" />
+    <Compile Include="Enum\Exceptions.cs" />
+    <Compile Include="Enum\NivelDeAcesso.cs" />
+    <Compile Include="Enum\Servers_Type.cs" />
+    <Compile Include="Enum\Tipo_Conexão.cs" />
+    <Compile Include="Enum\Lobby_Chat.cs" />
+    <Compile Include="Enum\Login_Error.cs" />
+    <Compile Include="Enum\Regions.cs" />
+    <Compile Include="Loja.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Loja.Designer.cs">
+      <DependentUpon>Loja.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Machine.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Machine.Designer.cs">
+      <DependentUpon>Machine.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\Box.cs" />
+    <Compile Include="Modelo\Calculator.cs" />
+    <Compile Include="Modelo\Clan.cs" />
+    <Compile Include="Modelo\Classe_Raiz.cs" />
+    <Compile Include="Modelo\Shop.cs" />
+    <Compile Include="Modelo\Player.cs" />
+    <Compile Include="Modelo\Sala.cs" />
+    <Compile Include="Pacotes\AUTH\ACK\BASE_CONFIG_ACK.cs" />
+    <Compile Include="Pacotes\AUTH\ACK\BASE_ENTER_SERVER_ACK.cs" />
+    <Compile Include="Pacotes\AUTH\ACK\BASE_EXIT_AUTH_ACK.cs" />
+    <Compile Include="Pacotes\AUTH\ACK\BASE_GIFTLIST_ACK.cs" />
+    <Compile Include="Pacotes\AUTH\ACK\BASE_LOGIN_ACK.cs" />
+    <Compile Include="Pacotes\AUTH\ACK\BASE_MYINFO_ACK.cs" />
+    <Compile Include="Pacotes\AUTH\ACK\BASE_SOURCE_ACK.cs" />
+    <Compile Include="Pacotes\AUTH\REQ\BASE_CLIENT_URL_REQ.cs" />
+    <Compile Include="Pacotes\AUTH\REQ\BASE_ENTER_SERVER_REQ.cs" />
+    <Compile Include="Pacotes\AUTH\REQ\BASE_EXIT_AUTH_REQ.cs" />
+    <Compile Include="Pacotes\AUTH\REQ\BASE_GIFT_LIST_REQ.cs" />
+    <Compile Include="Pacotes\AUTH\REQ\BASE_INVENTORY_REQ.cs" />
+    <Compile Include="Pacotes\AUTH\REQ\BASE_LOGIN_ERROR_REQ.cs" />
+    <Compile Include="Pacotes\AUTH\REQ\BASE_LOGIN_REQ.cs" />
+    <Compile Include="Pacotes\AUTH\REQ\BASE_MYCASH_REQ.cs" />
+    <Compile Include="Pacotes\AUTH\REQ\BASE_MYINFO_REQ.cs" />
+    <Compile Include="Pacotes\AUTH\REQ\AUTH_BASE_SCHANNEL_LIST_REQ.cs" />
+    <Compile Include="Pacotes\GAME\ACK\AUTH_ACCOUNT_KICK_ACK.cs" />
+    <Compile Include="Pacotes\GAME\ACK\AUTH_SEND_WHISPER_ACK.cs" />
+    <Compile Include="Pacotes\GAME\ACK\BASE_CHANNEL_ANNOUNCE_ACK.cs" />
+    <Compile Include="Pacotes\GAME\ACK\BASE_CHANNEL_PASSWRD_ACK.cs" />
+    <Compile Include="Pacotes\GAME\ACK\BASE_EXIT_GAME_ACK.cs" />
+    <Compile Include="Pacotes\GAME\ACK\BATTLE_LOADING_ACK.cs" />
+    <Compile Include="Pacotes\GAME\ACK\BATTLE_PRESTARTBATTLE_ACK.cs" />
+    <Compile Include="Pacotes\GAME\ACK\BATTLE_READYBATTLE_ACK.cs" />
+    <Compile Include="Pacotes\GAME\ACK\BATTLE_STARTBATTLE_ACK.cs" />
+    <Compile Include="Pacotes\GAME\ACK\BOX_MESSAGE_CREATE_ACK.cs" />
+    <Compile Include="Pacotes\GAME\ACK\CLAN_CHATTING_ACK.cs" />
+    <Compile Include="Pacotes\GAME\ACK\CLAN_CHATTING_PAGE_ACK.cs" />
+    <Compile Include="Pacotes\GAME\ACK\CLAN_CLIENT_CLAN_LIST_ACK.cs" />
+    <Compile Include="Pacotes\GAME\ACK\CLAN_CREATE_ACK.cs" />
+    <Compile Include="Pacotes\GAME\ACK\FRIEND_INVITE_ACK.cs" />
+    <Compile Include="Pacotes\GAME\ACK\GAME_BASE_USER_ENTER_ACK.cs" />
+    <Compile Include="Pacotes\GAME\ACK\LOBBY_CHATTING_ACK.cs" />
+    <Compile Include="Pacotes\GAME\ACK\LOBBY_CREATE_NICK_NAME_ACK.cs" />
+    <Compile Include="Pacotes\GAME\ACK\LOBBY_CREATE_ROOM_ACK.cs" />
+    <Compile Include="Pacotes\GAME\ACK\LOBBY_ENTER_ACK.cs" />
+    <Compile Include="Pacotes\GAME\ACK\LOBBY_GET_ROOMLIST_ACK.cs" />
+    <Compile Include="Pacotes\GAME\ACK\ROOM_GET_LOBBY_USER_LIST_ACK.cs" />
+    <Compile Include="Pacotes\GAME\ACK\ROOM_INVITE_PLAYERS_ACK.cs" />
+    <Compile Include="Pacotes\GAME\ACK\SHOP_GET_ACK.cs" />
+    <Compile Include="Pacotes\GAME\REQ\AUTH_RECV_WHISPER_REQ.cs" />
+    <Compile Include="Pacotes\GAME\REQ\AUTH_SEND_WHISPER_REQ.cs" />
+    <Compile Include="Pacotes\GAME\REQ\BASE_CHANNEL_ANNOUNCE_REQ.cs" />
+    <Compile Include="Pacotes\GAME\REQ\BASE_CHANNEL_PASSWRD_REQ.cs" />
+    <Compile Include="Pacotes\GAME\REQ\BASE_CHAT_ROOM_REQ.cs" />
+    <Compile Include="Pacotes\GAME\REQ\BASE_EXIT_GAME_REQ.cs" />
+    <Compile Include="Pacotes\GAME\REQ\BATTLE_READYBATTLE_REQ.cs" />
+    <Compile Include="Pacotes\GAME\REQ\BATTLE_STARTBATTLE_REQ.cs" />
+    <Compile Include="Pacotes\GAME\REQ\BOX_MESSAGE_CREATE_REQ.cs" />
+    <Compile Include="Pacotes\GAME\REQ\BOX_MESSAGE_RECV_REQ.cs" />
+    <Compile Include="Pacotes\GAME\REQ\CLAN_CHATTING_REQ.cs" />
+    <Compile Include="Pacotes\GAME\REQ\FRIEND_UPDATE_REQ.cs" />
+    <Compile Include="Pacotes\GAME\REQ\LOBBY_CREATE_ROOM_REQ.cs" />
+    <Compile Include="Pacotes\GAME\REQ\BASE_USER_ENTER_REQ.cs" />
+    <Compile Include="Pacotes\GAME\REQ\CLAN_CREATE_REQ.cs" />
+    <Compile Include="Pacotes\GAME\REQ\FRIEND_INVITE_REQ.cs" />
+    <Compile Include="Pacotes\GAME\REQ\GAME_BASE_SCHANNEL_LIST_REQ.cs" />
+    <Compile Include="Pacotes\GAME\REQ\LOBBY_CHATTING_REQ.cs" />
+    <Compile Include="Pacotes\GAME\REQ\LOBBY_CREATE_NICK_NAME_REQ.cs" />
+    <Compile Include="Pacotes\GAME\REQ\LOBBY_ENTER_REQ.cs" />
+    <Compile Include="Pacotes\GAME\REQ\LOBBY_GET_ROOMLIST_REQ.cs" />
+    <Compile Include="Pacotes\GAME\REQ\LOBBY_USER_LIST_REQ.cs" />
+    <Compile Include="Pacotes\GAME\REQ\ROOM_INVITE_PLAYERS_REQ.cs" />
+    <Compile Include="Pacotes\GAME\REQ\SERVER_MESSAGE_ANNOUNCE_REQ.cs" />
+    <Compile Include="Pacotes\GAME\REQ\SHOP_GET_ITEMS_REQ.cs" />
+    <Compile Include="Pacotes\GAME\REQ\SHOP_GET_GOODS_REQ.cs" />
+    <Compile Include="Pacotes\GAME\REQ\SHOP_GET_MATCHING_REQ.cs" />
+    <Compile Include="Pacotes\PacotesREQ.cs" />
+    <Compile Include="Pacotes\Processor.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Robô-Lobby.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Robô-Lobby.Designer.cs">
+      <DependentUpon>Robô-Lobby.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Room.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Room.Designer.cs">
+      <DependentUpon>Room.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="User.Designer.cs">
+      <DependentUpon>User.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Utilizar\Carregar.cs" />
+    <Compile Include="Utilizar\Dados.cs" />
+    <Compile Include="Utilizar\LoadingFile.cs" />
+    <Compile Include="Utilizar\PacketREQ.cs" />
+    <Compile Include="Utilizar\SendPacket.cs" />
+    <Compile Include="Utilizar\_Message.cs" />
+    <EmbeddedResource Include="Comandos.resx">
+      <DependentUpon>Comandos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Create_Box.resx">
+      <DependentUpon>Create_Box.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Criar Clã.resx">
+      <DependentUpon>Criar Clã.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Loja.resx">
+      <DependentUpon>Loja.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Machine.resx">
+      <DependentUpon>Machine.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Robô-Lobby.resx">
+      <DependentUpon>Robô-Lobby.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Room.resx">
+      <DependentUpon>Room.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User.resx">
+      <DependentUpon>User.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="app.manifest" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images.png" />
+    <None Include="Resources\5b374ccb4f74255974b41c52.png" />
+    <None Include="Resources\50389_preview.png" />
+    <None Include="Resources\Render-Point Blank2 Design Fire.png" />
+    <None Include="Resources\thumb-1920-62307.jpg" />
+    <Content Include="x-07-512.ico" />
+    <None Include="Resources\class_education_school_learning_teacher_education_print-512.png" />
+    <None Include="Resources\90dd9f12fdd1eefb8c8976903944c026-logotipo-do---cone-do-facebook-by-vexels.png" />
+    <None Include="Resources\Personagem 17.png" />
+    <None Include="Resources\VPS-Server-PNG-Photos.png" />
+    <None Include="Resources\logo-hamachi.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
